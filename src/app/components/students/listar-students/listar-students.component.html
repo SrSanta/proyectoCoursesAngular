@@ -1,1 +1,35 @@
-<p>listar-students works!</p>
+<h2 class="text-center my-4 text-primary">Lista Courses</h2>
+<div class="table-responsive">
+    <table class="table table-striped text-center">
+      <thead class="table-light">
+        <tr>
+          <th>Nombre</th>
+          <th>Edad</th>
+          <th>Direccion</th>
+          <th>OnGoing</th>
+          <th>Curso</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody class="table-light">
+        @for (student of students; track student.id) {
+        <tr>
+          <td>{{ student.name }}</td>
+          <td>{{ student.age }}</td>
+          <td>{{ student.address }}</td>
+          <td>{{ student.onGoing }}</td>
+          @for (course of courses; track course.id) {
+            @if (student.course == course.id) {
+                <td>{{ course.name }}</td>
+            }
+          }
+          
+          <td>
+            <a class="btn btn-danger btn-sm" (click)="eliminarStudent(student.id)">Eliminar</a>
+            <a class="btn btn-warm btn-sm" [routerLink]="['/editStudent', student.id]">Editar</a>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>

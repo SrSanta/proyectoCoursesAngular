@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Course } from '../../../models/course';
 import { CourseService } from '../../../services/course.service';
+import { RouterLink, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-listar-courses',
-  imports: [],
+  imports: [RouterModule, RouterLink],
   templateUrl: './listar-courses.component.html',
   styleUrl: './listar-courses.component.css',
 })
@@ -37,4 +38,6 @@ export class ListarCoursesComponent {
       this.getCoursesAll();
     });
   }
+
+
 }

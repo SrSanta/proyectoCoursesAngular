@@ -19,6 +19,7 @@
           <td>{{ course.coordinates.lat }} y {{course.coordinates.lng}}</td>
           <td>
             <a class="btn btn-danger btn-sm" (click)="eliminarCourse(course.id)">Eliminar</a>
+            <a class="btn btn-warm btn-sm" [routerLink]="['/editCourse', course.id]">Editar</a>
           </td>
         </tr>
         }
