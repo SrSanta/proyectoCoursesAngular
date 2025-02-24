@@ -1,8 +1,8 @@
 export interface Student {
-    id: String;
-    name: String;
-    age: Number;
-    address: String;
-    onGoing: Boolean;
-    course: String;
+    id: string;
+    name: string;
+    age: number;
+    address: string;
+    onGoing: boolean;
+    course: string;
 }

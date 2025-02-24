@@ -1,10 +1,10 @@
 export interface Course {
-    id: String;
-    name: String;
-    description: String;
-    duration: String;
+    id: string;
+    name: string;
+    description: string;
+    duration: string;
     coordinates: {
-        lat: Number;
-        lng: Number;
+        lat: number;
+        lng: number;
       };
 }
