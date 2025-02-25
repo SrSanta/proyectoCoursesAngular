@@ -1,1 +1,43 @@
-<p>edit-students works!</p>
+<form [formGroup]="form" (submit)="submit()" class="container mt-5 p-4 bg-white shadow rounded">
+    <h2 class="mb-4 text-center text-primary">Registro de Alumnos</h2>
+  
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <label for="course" class="form-label fw-bold">Curso:</label>
+        <select id="course" name="course" formControlName="course" class="form-select">
+          @for (course of courses; track course.id) {
+            <option value="{{course.id}}">{{course.name}}</option>
+          }
+        </select>
+      </div>
+    </div>
+  
+    <div class="card p-4 mt-4 border-0 shadow-sm">
+      <h5 class="card-title text-center text-secondary">Datos del Alumno</h5>
+  
+      <div class="mb-3">
+        <label for="name" class="form-label fw-bold">Nombre:</label>
+        <input type="text" id="name" class="form-control" placeholder="Ingrese el título" formControlName="name">
+      </div>
+  
+      <div class="mb-3">
+        <label for="age" class="form-label fw-bold">age:</label>
+        <input type="number" id="age" class="form-control" placeholder="Ingrese el título" formControlName="age">
+      </div>
+
+      <div class="mb-3">
+        <label for="address" class="form-label fw-bold">address:</label>
+        <input type="text" id="address" class="form-control" placeholder="Ingrese el título" formControlName="address">
+      </div>
+
+      <div class="mb-3 form-check">
+        <input type="checkbox" id="onGoing" class="form-check-input" formControlName="onGoing">
+        <label for="onGoing" class="form-check-label fw-bold">onGoing:</label>
+      </div>      
+    </div>
+  
+    <div class="text-center mt-4">
+      <button type="submit" class="btn btn-primary px-4 py-2 fw-bold shadow-sm">Registrar Evento</button>
+    </div>
+  </form>
+  
