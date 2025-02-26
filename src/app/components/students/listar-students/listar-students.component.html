@@ -1,35 +1,29 @@
-<h2 class="text-center my-4 text-primary">Lista Courses</h2>
-<div class="table-responsive">
-    <table class="table table-striped text-center">
-      <thead class="table-light">
-        <tr>
-          <th>Nombre</th>
-          <th>Edad</th>
-          <th>Direccion</th>
-          <th>OnGoing</th>
-          <th>Curso</th>
-          <th>Acciones</th>
-        </tr>
-      </thead>
-      <tbody class="table-light">
-        @for (student of students; track student.id) {
-        <tr>
-          <td>{{ student.name }}</td>
-          <td>{{ student.age }}</td>
-          <td>{{ student.address }}</td>
-          <td>{{ student.onGoing }}</td>
+<h2 class="text-center my-4 text-primary">Lista de Estudiantes</h2>
+
+<div class="row">
+  @for (student of students; track student.id) {
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <div class="card-header text-center">
+          <h5 class="card-title text-primary">{{ student.name }}</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>Edad:</strong> {{ student.age }}</p>
+          <p><strong>Dirección:</strong> {{ student.address }}</p>
+          <p><strong>On Going:</strong> {{ student.onGoing }}</p>
+          
+          <!-- Mostrar el nombre del curso -->
           @for (course of courses; track course.id) {
             @if (student.course == course.id) {
-                <td>{{ course.name }}</td>
+              <p><strong>Curso:</strong> {{ course.name }}</p>
             }
           }
-          
-          <td>
-            <a class="btn btn-danger btn-sm" (click)="eliminarStudent(student.id)">Eliminar</a>
-            <a class="btn btn-warm btn-sm" [routerLink]="['/editStudent', student.id]">Editar</a>
-          </td>
-        </tr>
-        }
-      </tbody>
-    </table>
-  </div>
+        </div>
+        <div class="card-footer text-center">
+          <a class="btn btn-danger btn-sm" (click)="eliminarStudent(student.id)">Eliminar</a>
+          <a class="btn btn-warning btn-sm" [routerLink]="['/editStudent', student.id]">Editar</a>
+        </div>
+      </div>
+    </div>
+  }
+</div>

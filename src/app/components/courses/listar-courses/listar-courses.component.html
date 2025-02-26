@@ -1,29 +1,23 @@
-<h2 class="text-center my-4 text-primary">Lista Courses</h2>
-<div class="table-responsive">
-    <table class="table table-striped text-center">
-      <thead class="table-light">
-        <tr>
-          <th>Nombre</th>
-          <th>Description</th>
-          <th>Duration</th>
-          <th>coordinates</th>
-          <th>Acciones</th>
-        </tr>
-      </thead>
-      <tbody class="table-light">
-        @for (course of courses; track course.id) {
-        <tr>
-          <td>{{ course.name }}</td>
-          <td>{{ course.description }}</td>
-          <td>{{ course.duration }}</td>
-          <td>{{ course.coordinates.lat }} y {{course.coordinates.lng}}</td>
-          <td>
-            <a class="btn btn-danger btn-sm" (click)="eliminarCourse(course.id)">Eliminar</a>
-            <a class="btn btn-warm btn-sm" [routerLink]="['/editCourse', course.id]">Editar</a>
-            <a class="btn btn-warm btn-sm" [routerLink]="['/detallesCourse', course.id]">Detalles</a>
-          </td>
-        </tr>
-        }
-      </tbody>
-    </table>
-  </div>
+<h2 class="text-center my-4 text-primary">Lista de Cursos</h2>
+
+<div class="row">
+  @for (course of courses; track course.id) {
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <div class="card-header text-center">
+          <h5 class="card-title text-primary">{{ course.name }}</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>Descripción:</strong> {{ course.description }}</p>
+          <p><strong>Duración:</strong> {{ course.duration }} horas</p>
+          <p><strong>Coordenadas:</strong> {{ course.coordinates.lat }} y {{ course.coordinates.lng }}</p>
+        </div>
+        <div class="card-footer text-center">
+          <a class="btn btn-danger btn-sm" (click)="eliminarCourse(course.id)">Eliminar</a>
+          <a class="btn btn-warning btn-sm" [routerLink]="['/editCourse', course.id]">Editar</a>
+          <a class="btn btn-info btn-sm" [routerLink]="['/detallesCourse', course.id]">Detalles</a>
+        </div>
+      </div>
+    </div>
+  }
+</div>
