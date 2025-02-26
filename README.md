@@ -1,3 +1,7 @@
+## para iniciar el proyecto hacer un: 
+ - npm install
+ - npm run start2
+
 # courses-platform
 Project for web client environment, course platform in which we have a structure of students, teachers and courses. With this I will make a small outline of what will be my integrated project. At first we will only have the administration of students with their courses, where a student can do multiple courses.
 
@@ -45,4 +49,4 @@ Files related to course management:
 - editCourse.html**: Page to edit a course.
 - CourseList.html**: Page with the list of courses.
 
-####add map
+#### add map
