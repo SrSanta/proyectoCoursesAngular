@@ -20,6 +20,7 @@
           <td>
             <a class="btn btn-danger btn-sm" (click)="eliminarCourse(course.id)">Eliminar</a>
             <a class="btn btn-warm btn-sm" [routerLink]="['/editCourse', course.id]">Editar</a>
+            <a class="btn btn-warm btn-sm" [routerLink]="['/detallesCourse', course.id]">Detalles</a>
           </td>
         </tr>
         }

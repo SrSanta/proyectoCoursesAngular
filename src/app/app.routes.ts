@@ -6,6 +6,7 @@ import { ListarStudentsComponent } from './components/students/listar-students/l
 import { EntradaComponent } from './components/entrada/entrada.component';
 import { EditCoursesComponent } from './components/courses/edit-courses/edit-courses.component';
 import { EditStudentsComponent } from './components/students/edit-students/edit-students.component';
+import { DetallesCourseComponent } from './components/courses/detalles-course/detalles-course.component';
 
 export const routes: Routes = [
     { path: '', component:EntradaComponent},
@@ -14,5 +15,7 @@ export const routes: Routes = [
     { path: 'formCourse', component: FormCoursesComponent},
     { path: 'formStudent', component: FormStudentsComponent},
     { path: 'editCourse/:id', component: EditCoursesComponent},
-    { path: 'editStudent/:id', component: EditStudentsComponent}
+    { path: 'editStudent/:id', component: EditStudentsComponent},
+    { path: 'detallesCourse/:id', component: DetallesCourseComponent}
+
 ];
