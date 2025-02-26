@@ -44,3 +44,5 @@ Files related to course management:
 - course.js**: Course logic.
 - editCourse.html**: Page to edit a course.
 - CourseList.html**: Page with the list of courses.
+
+####add map
